@@ -95,7 +95,7 @@ char	*straddSpc( const char *, const char *,
 char	*straddSpc( const char *, const char *,
 		    const char *, const char * );
 
-extern int yydebug;
+int yydebug;
 bool	   lexDebug	   = FALSE;
 bool	   grammarDebug	   = FALSE;
 int	   lineNo;				// current line number

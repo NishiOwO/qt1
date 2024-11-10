@@ -69,8 +69,10 @@ Q_EXPORT char *qstrdup( const char * );
 Q_EXPORT inline uint cstrlen( const char *str )
 { return strlen(str); }
 
-Q_EXPORT inline uint qstrlen( const char *str )
+extern "C" {
+Q_EXPORT inline size_t qstrlen( const char *str )
 { return str ? strlen(str) : 0; }
+}
 
 #undef	strlen
 #define strlen qstrlen

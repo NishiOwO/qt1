@@ -36,7 +36,7 @@ add_library(Qt1
     $<TARGET_OBJECTS:widgets>
     $<TARGET_OBJECTS:tools>
 
-    $<TARGET_OBJECTS:qgl>
+#   $<TARGET_OBJECTS:qgl>
 )
 
 add_library(Qt::Qt1 ALIAS Qt1)
