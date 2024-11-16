@@ -74,8 +74,10 @@ Q_EXPORT inline size_t qstrlen( const char *str )
 { return str ? strlen(str) : 0; }
 }
 
+#ifndef __FreeBSD__
 #undef	strlen
 #define strlen qstrlen
+#endif
 
 Q_EXPORT inline char *cstrcpy( char *dst, const char *src )
 { return strcpy(dst,src); }
