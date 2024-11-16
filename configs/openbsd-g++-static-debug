@@ -39,7 +39,7 @@ SYSCONF_MOC		= $(QTDIR)/bin/moc
 #   - Place target in $(DESTDIR) - which has a trailing /
 #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
 #
-SYSCONF_LINK_SHLIB	= ld
+SYSCONF_LINK_SHLIB	= g++
 SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
 SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -shared $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder  $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
 
