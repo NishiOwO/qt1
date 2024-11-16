@@ -95,7 +95,9 @@ char	*straddSpc( const char *, const char *,
 char	*straddSpc( const char *, const char *,
 		    const char *, const char * );
 
+#ifndef __OpenBSD__
 int yydebug;
+#endif
 bool	   lexDebug	   = FALSE;
 bool	   grammarDebug	   = FALSE;
 int	   lineNo;				// current line number
