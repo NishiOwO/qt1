@@ -67,6 +67,12 @@ find_package(X11 REQUIRED)
 find_package(BYACC REQUIRED)
 find_package(FLEX REQUIRED)
 
+if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
+    set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -I/usr/X11R7/include -I/usr/pkg/include")
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -I/usr/X11R7/include -I/usr/pkg/include")
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -L/usr/X11R7/lib -L/usr/pkg/lib -R/usr/X11R7/lib -R/usr/pkg/lib")
+endif()
+
 add_subdirectory(src)
 add_subdirectory(include)
 

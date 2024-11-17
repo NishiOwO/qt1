@@ -95,8 +95,12 @@ char	*straddSpc( const char *, const char *,
 char	*straddSpc( const char *, const char *,
 		    const char *, const char * );
 
+#ifdef YYBYACC
+extern int yydebug;
+#else
 #ifndef __OpenBSD__
 int yydebug;
+#endif
 #endif
 bool	   lexDebug	   = FALSE;
 bool	   grammarDebug	   = FALSE;
