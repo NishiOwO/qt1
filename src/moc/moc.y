@@ -96,7 +96,11 @@ char	*straddSpc( const char *, const char *,
 		    const char *, const char * );
 
 #ifdef YYBYACC
+#ifndef YYDEBUG
+int yydebug;
+#else
 extern int yydebug;
+#endif
 #else
 #ifndef __OpenBSD__
 int yydebug;
